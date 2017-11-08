@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  before_action :configure_permitted_parameters, if: :devise_controller?
   protect_from_forgery with: :exception
   before_action :current_cart
 
@@ -7,10 +8,10 @@ class ApplicationController < ActionController::Base
   include CategoriesHelper
 
   def logged_in_user
-    return if logged_in?
+    return if user_signed_in?
     store_location
     flash[:danger] = t "please_login"
-    redirect_to login_url
+    redirect_to new_user_session_path
   end
 
   def admin_user
@@ -26,10 +27,16 @@ class ApplicationController < ActionController::Base
   def current_cart
     @cart = Order.find(session[:cart_id])
     rescue ActiveRecord::RecordNotFound
-      if current_user.present?
-        @cart = current_user.orders.new
-      else
-        @cart = Order.new
-      end
+    if current_user.present?
+      @cart = current_user.orders.new
+    else
+      @cart = Order.new
+    end
+  end
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :phone, :address])
   end
 end

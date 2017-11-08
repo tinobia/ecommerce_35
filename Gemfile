@@ -26,6 +26,7 @@ gem "jbuilder", "~> 2.5"
 gem "figaro"
 gem "roo"
 gem "rspec", "~> 3.0"
+gem "devise"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

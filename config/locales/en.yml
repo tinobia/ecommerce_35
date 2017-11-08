@@ -128,7 +128,51 @@ en:
   create: "Create"
   this_is_super_category: "This is a super category"
   super_cate: "Super Category"
-
+  welcome: Welcome
+  hello: "Hello"
+  new_pass: "New password"
+  confirm_pass: "Confirm new password"
+  view_off: "off"
+  send_mail: "Send me reset password instructions"
+  edit: "Edit"
+  update: "Update"
+  cancel_account: "Cancel my account"
+  unhappy: "Unhappy? "
+  back: "Back"
+  sign_up: "Sign up"
+  log_in: "Log in"
+  characters_minimum: "characters minimum"
+  sure: "Are you sure?"
+  mailer:
+    confirm:
+      can_confirm: "You can confirm your account email through the link below:"
+      link: "Confirm my account"
+    change:
+      content_1: "We're contacting you to notify you that your email is being changed to"
+      content_2: "We're contacting you to that your email has been changed to"
+      content_3: "Your password won't change until you access the link above and create a new one."
+      content_4: "Click the link below to unlock your account:"
+      unlock: "Unlock my account"
+  devise:
+    confirm:
+      new:
+        resend: "Resend confirmation instructions"
+        submit: "Resend confirmation instructions"
+    password:
+      edit:
+        change_pass: "Change your password"
+      new:
+        forgot_pass: "Forgot your password?"
+    register:
+      edit:
+        content_1: "Currently waiting confirmation for: "
+        content_2: "(leave blank if you don't want to change it)"
+        content_3: "characters minimum"
+        content_4: "(we need your current password to confirm your changes)"
+    unlock:
+      new:
+        h2: "Resend unlock instructions"
+        submit: "Resend unlock instructions"
   static_pages:
     home:
       sign_up_announcement: "Sign up now!"
