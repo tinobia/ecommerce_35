@@ -8,10 +8,12 @@ Rails.application.routes.draw do
   get "static_pages/contact"
   get "/products_manager", to: "static_pages#products_manager"
   get "/categories_manager", to: "static_pages#categories_manager"
-  get "/signup", to: "users#new"
-  get "/login", to: "sessions#new"
-  post "/login", to: "sessions#create"
-  delete "/logout", to: "sessions#destroy"
+  # get "/signup", to: "users#new"
+  # get "/login", to: "sessions#new"
+  # post "/login", to: "sessions#create"
+  # delete "/logout", to: "sessions#destroy"
+  get "users", to: "user#index"
+  devise_for :users
   resources :users
   resources :products do
     resources :parameters, except: %i(index show)

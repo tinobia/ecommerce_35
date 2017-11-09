@@ -6,7 +6,7 @@
     <%= f.file_field :picture, accept: Settings.picture.accepted_file %>
   <% end %>
 
-  <% if logged_in? && current_user.admin? && !current_user?(@user) %>
+  <% if user_signed_in? && current_user.admin? && !current_user?(@user) %>
     <%= f.label :admin %>
     <%= f.check_box :admin %>
   <% end %><br>
